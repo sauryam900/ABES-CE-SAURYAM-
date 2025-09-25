@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+    }
+    .form-container, .resume {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .form-container label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #444;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #222;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .section p, .section ul {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="form-container">
+    <h2>Resume Form</h2>
+    <label>Full Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Initials (for logo):</label>
+    <input type="text" id="initials" placeholder="E.g. SB">
+
+    <label>Education:</label>
+    <textarea id="education" placeholder="Enter your education"></textarea>
+
+    <label>Skills:</label>
+    <input type="text" id="skills" placeholder="E.g. C++, Java, Python">
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label>Phone:</label>
+    <input type="text" id="phone" placeholder="Enter your phone number">
+
+    <button onclick="generateResume()">Generate Resume</button>
+  </div>
+
+  
+  <div class="resume" id="resume" style="display:none;">
+    <div class="header">
+      <div class="logo" id="resLogo"></div>
+      <div>
+        <h1 id="resName"></h1>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <p id="resEducation"></p>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <ul id="resSkills"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Address</h2>
+      <p>Email: <span id="resEmail"></span><br>
+         Phone: <span id="resPhone"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function generateResume() {
+      document.getElementById("resume").style.display = "block";
+
+      document.getElementById("resName").innerText = document.getElementById("name").value;
+      document.getElementById("resLogo").innerText = document.getElementById("initials").value;
+      document.getElementById("resEducation").innerText = document.getElementById("education").value;
+
+      let skills = document.getElementById("skills").value.split(",");
+      let skillsList = document.getElementById("resSkills");
+      skillsList.innerHTML = "";
+      skills.forEach(skill => {
+        let li = document.createElement("li");
+        li.innerText = skill.trim();
+        if (li.innerText) skillsList.appendChild(li);
+      });
+
+      document.getElementById("resEmail").innerText = document.getElementById("email").value;
+      document.getElementById("resPhone").innerText = document.getElementById("phone").value;
+    }
+  </script>
+
+</body>
+</html>

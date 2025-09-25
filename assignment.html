@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Header Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2874f0;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+      display: flex;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 8px 15px;
+      background-color: #2874f0;
+      color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .header-right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .header-right a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .category-item img {
+      width: 40px;
+      height: 40px;
+      display: block;
+      margin: 0 auto 5px;
+    }
+
+    .category-item span {
+      font-size: 14px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="header">
+    <div class="logo">Flipkart</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for Products, Brands and More">
+      <button>🔍</button>
+    </div>
+
+    <div class="header-right">
+      <a href="#">Login</a>
+      <a href="#">Cart</a>
+      <a href="#">Become a Seller</a>
+    </div>
+  </div>
+<br>
+  
+  <div class="categories">
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/shopping-bag.png" alt="Minutes">
+      <span>Minutes</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/smartphone.png" alt="Mobiles">
+      <span>Mobiles & Tablets</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/t-shirt.png" alt="Fashion">
+      <span>Fashion</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/headphones.png" alt="Electronics">
+      <span>Electronics</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/sofa.png" alt="Home">
+      <span>Home & Furniture</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/tv.png" alt="TV">
+      <span>TVs & Appliances</span>
+    </div>
+    <div class="category-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9XepcdvwFC4qPHVb-KDCNBkxjv3lIxHo6ag&s" alt="Flight">
+      <span>Flight Bookings</span>
+    </div>
+    <div class="category-item">
+      <img src="https://img.icons8.com/ios-filled/50/teddy-bear.png" alt="Beauty">
+      <span>Beauty, Toys</span>
+    </div>
+    <div class="category-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBRST9Ds6FH2D-fOnnI_-8AQEB2z_KDpVOtw&s" alt="Grocery">
+      <span>Grocery</span>
+    </div>
+  </div>
+
+</body>
+</html>
