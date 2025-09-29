@@ -7,16 +7,27 @@
 </head>
 <body>
     <script>
-        function getData()
+        function getData(dataid,getnextdata)
         {
             setTimeout(()=>{
                 consle.log("data",'dataid');
+                if(getnextData)
+            {
+                getnextdata();
+            }
 
             },2000)
         }
-        getData(1);
-        getData(2);
-        getData(3);
+        getData(1,()=>{
+            getData(2,()=>{
+                getData(3,()=>{
+                    getData(4);
+
+                });
+            });
+        });
+        
+        
     </script>
     
 </body>
