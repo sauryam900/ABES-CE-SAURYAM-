@@ -91,7 +91,7 @@
       return;
     }
 
-    // disable current "+" button so each input only has one chance
+    
     button.disabled = true;
 
     const newInputDiv = document.createElement('div');
@@ -116,7 +116,7 @@
   function showAllTasks() {
     const inputs = document.querySelectorAll('#taskInputs input');
     const list = document.getElementById('listDisplay');
-    list.innerHTML = ""; // clear old list
+    list.innerHTML = ""; 
 
     inputs.forEach(input => {
       const value = input.value.trim();
